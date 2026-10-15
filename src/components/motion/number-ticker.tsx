@@ -17,7 +17,7 @@ export function NumberTicker({ value, decimals = 0, duration = 1200, className }
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const r = el.getBoundingClientRect();
     if (r.top < window.innerHeight) return; // already visible: keep the final value, no flash
-    // eslint-disable-next-line react-hooks/set-state-in-effect -- offscreen reset before counting
+     
     setDisplay((0).toFixed(decimals));
     let raf = 0;
     const io = new IntersectionObserver(

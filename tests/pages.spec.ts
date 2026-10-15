@@ -9,6 +9,15 @@ export const ROUTES = [
   "/destinations/ocean-view-anilao",
   "/destinations/mabini-golf-country-club",
   "/destinations/the-urban-coral",
+  "/about",
+  "/sustainability",
+  "/anilao",
+  "/ownership",
+  "/invest",
+  "/contact",
+  "/legal/privacy-notice",
+  "/legal/terms",
+  "/legal/disclaimers",
 ];
 
 for (const path of ROUTES) {
@@ -69,4 +78,51 @@ test("hero image is eager with high fetch priority (P01-AC2)", async ({ page }) 
   const hero = page.locator("section").first().locator("img").first();
   await expect(hero).toHaveAttribute("fetchpriority", "high");
   expect(await hero.getAttribute("loading")).not.toBe("lazy");
+});
+
+test("Invest page has no financial figures (P12-AC1)", async ({ page }) => {
+  await page.goto("/invest");
+  const text = await page.locator("main").innerText();
+  expect(text).not.toMatch(/\bIRR\b|\bGDV\b|MOIC|valuation|tranche|₱\s?\d|US\$\s?\d|\bNOI\b/i);
+});
+
+test("Ownership has no visa or citizenship claims and keeps the no-guarantee note (P11)", async ({ page }) => {
+  await page.goto("/ownership");
+  const text = await page.locator("main").innerText();
+  expect(text).not.toMatch(/SRRV|SIRV|TIEZA|citizenship|visa|fractional/i);
+  await expect(page.locator("main")).toContainText("No income or return is guaranteed");
+});
+
+test("Q&A accordion opens by keyboard (P11-AC4)", async ({ page }) => {
+  await page.goto("/ownership");
+  const trigger = page.getByRole("button", { name: /Are prices published/ });
+  await trigger.focus();
+  await page.keyboard.press("Enter");
+  await expect(trigger).toHaveAttribute("aria-expanded", "true");
+});
+
+test("Why Anilao: 26 dive sites as text, never 50+, 1,200+ words, TouristDestination LD (P10)", async ({ page }) => {
+  await page.goto("/anilao");
+  const main = page.locator("main");
+  await expect(main.locator('h3:has-text("The 26 documented dive sites") + ol > li')).toHaveCount(26);
+  const text = await main.innerText();
+  expect(text).not.toMatch(/50\+/);
+  expect(text.split(/\s+/).length).toBeGreaterThan(1200);
+  const ld = (await page.locator('script[type="application/ld+json"]').allTextContents()).join(" ");
+  expect(ld).toContain('"TouristDestination"');
+});
+
+test("Contact: details as plain text, RealEstateAgent LD, no map embed (P15)", async ({ page }) => {
+  await page.goto("/contact");
+  await expect(page.locator("main")).toContainText("+63 917 882 8880");
+  await expect(page.locator("main")).toContainText("info@terraconcetti.com");
+  expect(await page.locator("iframe").count()).toBe(0);
+  const ld = (await page.locator('script[type="application/ld+json"]').allTextContents()).join(" ");
+  expect(ld).toContain('"RealEstateAgent"');
+});
+
+test("legal pages show the draft note until counsel review (P17-AC1)", async ({ page }) => {
+  await page.goto("/legal/privacy-notice");
+  await expect(page.getByText(/Draft for review/)).toBeVisible();
+  await expect(page.locator("main")).toContainText("Data Privacy Act");
 });

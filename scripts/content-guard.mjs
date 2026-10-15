@@ -58,7 +58,9 @@ for (const f of contentFiles) {
   for (const [re, label] of blocked) {
     const lines = text.split("\n");
     lines.forEach((line, i) => {
-      if (re.test(line) && !/content-guard: allow/.test(line)) errors.push(`${relative(root, f)}:${i + 1}  blocked term: ${label}`);
+      const t = line.trim();
+      const isComment = t.startsWith("//") || t.startsWith("*") || t.startsWith("/*") || t.startsWith("{/*");
+      if (!isComment && re.test(line) && !/content-guard: allow/.test(line)) errors.push(`${relative(root, f)}:${i + 1}  blocked term: ${label}`);
     });
   }
 }
@@ -92,12 +94,16 @@ const total = (imagesTs.match(/^\s+\w+: img\(/gm) || []).length;
 const finals = (imagesTs.match(/placeholder: false/g) || []).length;
 const placeholders = total - finals;
 
+/* ---------- 4. Legal review status (reported) ---------- */
+const legalTs = readFileSync(join(SRC, "content/legal.ts"), "utf8");
+const legalReviewed = /reviewed:\s*true/.test(legalTs);
+
 if (errors.length) {
   console.error(`\n✖ Content guard failed (${errors.length}):\n  ` + errors.join("\n  ") + "\n");
   process.exit(1);
 }
-console.log(`✔ Content guard passed. contactMode=${infoOnly ? "info-only" : "enabled"} · placeholder images in library: ${placeholders} of ${total}`);
-if (process.env.REQUIRE_FINAL_ASSETS === "true" && placeholders > 0) {
-  console.error(`✖ REQUIRE_FINAL_ASSETS=true but ${placeholders} placeholder image(s) remain (BRD Q-AC6).`);
+console.log(`✔ Content guard passed. contactMode=${infoOnly ? "info-only" : "enabled"} · placeholder images in library: ${placeholders} of ${total} · legal pages reviewed: ${legalReviewed ? "yes" : "NO (draft)"}`);
+if (process.env.REQUIRE_FINAL_ASSETS === "true" && (placeholders > 0 || !legalReviewed)) {
+  console.error(`✖ REQUIRE_FINAL_ASSETS=true but ${placeholders} placeholder image(s) remain or legal pages are unreviewed (BRD Q-AC6, P17-AC1).`);
   process.exit(1);
 }
