@@ -19,8 +19,9 @@ export function Logo({ onDark, className, asLink = true }: { onDark?: boolean; c
   );
   if (!asLink) return inner;
   return (
-    <Link href="/" aria-label="Terra Concetti, home" className="inline-flex min-h-11 items-center">
+    <Link href="/" className="inline-flex min-h-11 items-center">
       {inner}
+      <span className="sr-only">, home</span>
     </Link>
   );
 }

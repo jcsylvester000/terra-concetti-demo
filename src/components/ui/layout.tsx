@@ -23,14 +23,14 @@ export function Section({
   ...props
 }: { tone?: Tone; as?: ElementType; children: ReactNode } & Omit<ComponentProps<"section">, "children">) {
   return (
-    <Tag className={cn("py-16 md:py-24", tones[tone], className)} data-tone={tone} {...props}>
+    <Tag className={cn("py-16 md:py-24", tones[tone], className)} data-tone={tone} data-cv="" {...props}>
       {children}
     </Tag>
   );
 }
 
 export function Eyebrow({ className, onDark, ...props }: ComponentProps<"p"> & { onDark?: boolean }) {
-  return <p className={cn("t-eyebrow", onDark ? "text-gold" : "text-bronze", className)} {...props} />;
+  return <p className={cn("t-eyebrow", onDark ? "text-gold" : "text-bronze-ink", className)} {...props} />;
 }
 
 /** Section heading block: eyebrow + H2 + optional lead. */

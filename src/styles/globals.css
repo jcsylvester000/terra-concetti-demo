@@ -12,6 +12,7 @@
   --color-shell: #faf7f2;
   --color-gold: #d3bf84;
   --color-bronze: #88633e;
+  --color-bronze-ink: #7a5836; /* Bronze Bark darkened for small text: 5.3:1 on Linen (WCAG AA) */
   --color-sage: #e2e7d7;
   --color-driftwood: #6b6056;
   --color-line: #d8cfbf;
@@ -76,8 +77,9 @@
   }
   a { text-underline-offset: 0.2em; }
   .font-display, .t-display, .t-display-xl { font-variant-numeric: lining-nums; }
-  h1, h2, h3, h4 { text-wrap: balance; }
-  p { text-wrap: pretty; }
+  h1, h2 { text-wrap: balance; }
+  /* Skip rendering work for off-screen sections until they approach the viewport. */
+  [data-cv] { content-visibility: auto; contain-intrinsic-size: auto 900px; }
 }
 
 /* ---------------- Type scale (BRD §6.4) ---------------- */
@@ -174,7 +176,7 @@
 
 /* I7 Expanding destination panels (desktop): the hovered or focused panel widens. */
 @media (min-width: 1024px) {
-  .tc-panels { display: flex; gap: 12px; height: 560px; }
+  .tc-panels { gap: 12px; height: 560px; }
   .tc-panel { flex: 1 1 0; min-width: 0; transition: flex-grow 700ms var(--ease-calm); }
   .tc-panels:not(:hover):not(:focus-within) .tc-panel:first-child,
   .tc-panel:hover,
@@ -225,3 +227,16 @@
   }
 }
 .tc-contours.is-pending path { stroke-dashoffset: 1; }
+
+/* I6 statement reveal: per-word colour from Driftwood to Forest Floor, driven by the element's view. */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    @keyframes tc-word { from { color: var(--color-driftwood); } to { color: var(--color-forest); } }
+    .tc-reveal { view-timeline-name: --tc-reveal; }
+    .tc-reveal > span {
+      animation: tc-word linear both;
+      animation-timeline: --tc-reveal;
+      animation-range: cover calc(15% + var(--i) / var(--n) * 30%) cover calc(20% + var(--i) / var(--n) * 30%);
+    }
+  }
+}

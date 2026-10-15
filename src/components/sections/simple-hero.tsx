@@ -11,7 +11,7 @@ export function SimpleHero({ crumbs, eyebrow, title, lead, aside, contours = tru
         <Breadcrumbs items={crumbs} />
         <div className={aside ? "mt-10 grid gap-10 lg:grid-cols-[1fr_1.1fr] lg:items-end" : "mt-10 max-w-3xl"}>
           <div>
-            {eyebrow ? <p className="t-eyebrow text-bronze">{eyebrow}</p> : null}
+            {eyebrow ? <p className="t-eyebrow text-bronze-ink">{eyebrow}</p> : null}
             <h1 className="t-display-xl mt-4">{title}</h1>
             {lead ? <p className="t-lead mt-6 max-w-2xl text-forest/85">{lead}</p> : null}
           </div>

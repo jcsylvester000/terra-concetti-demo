@@ -156,7 +156,7 @@ export default function AnilaoPage() {
             </p>
           </Container>
           <div className="mt-10 pl-4 md:pl-6 lg:pl-8 xl:pl-[max(2rem,calc((100vw-1280px)/2+2rem))]">
-            <ol className="tc-journey-track pr-4">
+            <ol tabIndex={0} aria-label="The journey from Manila to Anilao" className="tc-journey-track pr-4">
               {journey.map((j) => (
                 <li key={j.step} className="flex min-h-[220px] flex-col rounded-[6px] border border-shell/15 bg-moss p-6 md:p-8">
                   <span className="font-display text-[44px] leading-none font-semibold text-gold">{j.step}</span>
@@ -213,7 +213,7 @@ export default function AnilaoPage() {
           <ul className="mt-10 grid gap-4 md:grid-cols-3">
             {seasons.map((s) => (
               <li key={s.title} className="rounded-[6px] bg-shell p-6">
-                <p className="t-eyebrow text-bronze">{s.months}</p>
+                <p className="t-eyebrow text-bronze-ink">{s.months}</p>
                 <h3 className="t-h3 mt-2">{s.title}</h3>
                 <p className="mt-3 text-forest/80">{s.text}</p>
               </li>

@@ -31,7 +31,7 @@ export default function OwnershipPage() {
         <Container className="grid gap-6 md:grid-cols-2">
           {buyerPaths.map((b) => (
             <article key={b.id} id={b.id} className="scroll-mt-24 rounded-[6px] bg-linen p-7 md:p-9">
-              <p className="t-eyebrow text-bronze">Ownership path</p>
+              <p className="t-eyebrow text-bronze-ink">Ownership path</p>
               <h2 className="t-display mt-3">{b.title}</h2>
               <p className="t-lead mt-4 text-forest/85">{b.lead}</p>
               <ul className="mt-6 space-y-3">
@@ -70,7 +70,7 @@ export default function OwnershipPage() {
           <ol className="mt-10 grid gap-4 md:grid-cols-5">
             {buyingSteps.map((s, i) => (
               <li key={s.title} className="relative rounded-[6px] bg-shell p-6">
-                <span className="font-display text-[40px] leading-none font-semibold text-gold">{i + 1}</span>
+                <span className="font-display text-[40px] leading-none font-semibold text-bronze-ink">{i + 1}</span>
                 <h3 className="t-h4 mt-3">{s.title}</h3>
                 <p className="mt-2 text-[15px] leading-6 text-forest/80">{s.text}</p>
               </li>

@@ -53,7 +53,7 @@ export default function HomePage() {
       {/* 2 · Proof strip */}
       <section aria-label="Why Terra Concetti" className="border-b border-line bg-shell">
         <Container>
-          <ul className="-mx-4 flex snap-x gap-px overflow-x-auto px-4 md:mx-0 md:grid md:grid-cols-4 md:overflow-visible md:px-0">
+          <ul tabIndex={0} aria-label="Key facts" className="-mx-4 flex snap-x scroll-px-4 gap-px overflow-x-auto px-4 md:mx-0 md:grid md:grid-cols-4 md:overflow-visible md:px-0">
             <li className="min-w-[70%] snap-start py-6 pr-6 sm:min-w-[40%] md:min-w-0">
               <p className="font-display text-[26px] leading-8 font-semibold">Birthplace</p>
               <p className="text-[14px] text-driftwood">of Philippine scuba diving</p>
@@ -102,9 +102,9 @@ export default function HomePage() {
               lead="Anilao is where Philippine scuba diving began. Its reefs draw divers and underwater photographers from around the world, and you can reach them by car."
             />
             <ul className="mt-8 space-y-4">
-              <li className="flex gap-4"><span className="t-eyebrow w-24 shrink-0 pt-1 text-bronze">Access</span><span>About two hours (122 km) from NAIA via SLEX and the STAR Tollway. No flights or boats needed.</span></li>
-              <li className="flex gap-4"><span className="t-eyebrow w-24 shrink-0 pt-1 text-bronze">Season</span><span>Peak visibility from November to May, with water at about 26–30 °C.</span></li>
-              <li className="flex gap-4"><span className="t-eyebrow w-24 shrink-0 pt-1 text-bronze">Views</span><span>Elevated sites facing Sombrero and Tingloy Islands, with the sun setting over the water.</span></li>
+              <li className="flex gap-4"><span className="t-eyebrow w-24 shrink-0 pt-1 text-bronze-ink">Access</span><span>About two hours (122 km) from NAIA via SLEX and the STAR Tollway. No flights or boats needed.</span></li>
+              <li className="flex gap-4"><span className="t-eyebrow w-24 shrink-0 pt-1 text-bronze-ink">Season</span><span>Peak visibility from November to May, with water at about 26–30 °C.</span></li>
+              <li className="flex gap-4"><span className="t-eyebrow w-24 shrink-0 pt-1 text-bronze-ink">Views</span><span>Elevated sites facing Sombrero and Tingloy Islands, with the sun setting over the water.</span></li>
             </ul>
             <TextLink href="/anilao" className="mt-8">Discover Anilao</TextLink>
           </div>

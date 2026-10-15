@@ -12,7 +12,7 @@ export function ProjectCard({ project, headingLevel = "h3" }: { project: Project
   const H = headingLevel;
   return (
     <article style={accentVars(project.accent)} className="group flex flex-col overflow-hidden rounded-[6px] bg-shell ring-1 ring-line/70">
-      <Link href={projectPath(project)} className="flex flex-1 flex-col" aria-label={`${project.nameWithPlace}: ${project.summary}`}>
+      <Link href={projectPath(project)} className="flex flex-1 flex-col">
         <div className="relative aspect-[4/3] overflow-hidden bg-sage">
           <Image src={img.src} alt="" fill sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw" placeholder="blur" className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]" />
           <ProjectStatusChip project={project} className="absolute top-3 left-3" />

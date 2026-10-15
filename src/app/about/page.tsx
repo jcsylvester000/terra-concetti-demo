@@ -83,7 +83,7 @@ export default function AboutPage() {
           <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {approach.map((a, i) => (
               <li key={a.title} className="rounded-[6px] bg-shell p-6">
-                <span className="font-display text-[28px] leading-none font-semibold text-gold">0{i + 1}</span>
+                <span className="font-display text-[28px] leading-none font-semibold text-bronze-ink">0{i + 1}</span>
                 <h3 className="t-h4 mt-3">{a.title}</h3>
                 <p className="mt-2 text-[15px] leading-6 text-forest/80">{a.text}</p>
               </li>

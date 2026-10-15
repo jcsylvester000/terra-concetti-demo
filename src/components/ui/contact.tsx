@@ -51,6 +51,7 @@ export function ContactBlock({
   return (
     <section
       aria-labelledby="contact-block-title"
+      data-cv=""
       className={cn("relative overflow-hidden py-16 md:py-20", dark ? "bg-moss text-shell" : "bg-shell text-forest")}
     >
       <div className="mx-auto grid w-full max-w-[1280px] gap-10 px-4 md:grid-cols-[1fr_1.4fr] md:px-6 lg:px-8">

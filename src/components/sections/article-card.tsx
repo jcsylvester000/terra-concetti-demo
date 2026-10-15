@@ -14,7 +14,7 @@ export function ArticleCard({ article, headingLevel = "h3" }: { article: Article
           <Image src={img.src} alt="" fill sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" placeholder="blur" className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]" />
         </div>
         <div className="flex flex-1 flex-col p-5">
-          <p className="t-eyebrow !text-[11px] text-bronze">{article.category}</p>
+          <p className="t-eyebrow !text-[11px] text-bronze-ink">{article.category}</p>
           <H className="t-h4 mt-2 group-hover:underline group-hover:decoration-gold group-hover:decoration-2 group-hover:underline-offset-4">{article.title}</H>
           <p className="mt-2 text-[15px] leading-6 text-forest/80">{article.excerpt}</p>
           <p className="t-caption mt-auto pt-4">

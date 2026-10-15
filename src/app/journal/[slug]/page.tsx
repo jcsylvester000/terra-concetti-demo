@@ -58,7 +58,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           <Container>
             <Breadcrumbs items={[{ name: "Journal", path: "/journal" }, { name: a.title, path: articlePath(a) }]} />
             <div className="mt-10 max-w-3xl">
-              <p className="t-eyebrow text-bronze">
+              <p className="t-eyebrow text-bronze-ink">
                 <Link href={pillar.path} className="hover:text-forest">{a.category}</Link>
               </p>
               <h1 className="t-display-xl mt-4">{a.title}</h1>
@@ -79,7 +79,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
             <aside className="space-y-8 lg:sticky lg:top-24 lg:self-start">
               {a.headings.length >= 3 ? (
                 <nav aria-label="In this article" className="rounded-[6px] bg-shell p-5 ring-1 ring-line/70">
-                  <p className="t-eyebrow !text-[11px] text-bronze">In this article</p>
+                  <p className="t-eyebrow !text-[11px] text-bronze-ink">In this article</p>
                   <ol className="mt-3 space-y-1.5 text-[15px]">
                     {a.headings.map((h) => (
                       <li key={h.id}><a href={`#${h.id}`} className="text-forest/80 hover:text-forest hover:underline">{h.text}</a></li>
@@ -88,7 +88,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
                 </nav>
               ) : null}
               <div className="rounded-[6px] bg-sage p-5">
-                <p className="t-eyebrow !text-[11px] text-bronze">About the author</p>
+                <p className="t-eyebrow !text-[11px] text-bronze-ink">About the author</p>
                 <div className="mt-3 flex items-center gap-3">
                   <span aria-hidden className="grid size-11 place-items-center rounded-full bg-moss text-shell"><Monogram className="w-3" /></span>
                   <div>
@@ -106,7 +106,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
       <Section tone="shell">
         <Container className="grid gap-10 lg:grid-cols-[1fr_1.4fr] lg:items-start">
           <div>
-            <p className="t-eyebrow text-bronze">Related destination</p>
+            <p className="t-eyebrow text-bronze-ink">Related destination</p>
             <h2 className="t-display mt-3">See it for yourself</h2>
             <p className="mt-4 text-forest/80">Explore the homes, the masterplan and the views, or read our <Link href={pillar.path} className="underline decoration-gold decoration-2 underline-offset-4">{pillar.label}</Link> guide.</p>
           </div>

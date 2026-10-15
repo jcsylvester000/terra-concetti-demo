@@ -66,7 +66,7 @@ export default function StyleguidePage() {
           <p className="t-h4">Premium dive center</p>
           <p className="t-lead max-w-2xl">Sustainable villas and residences two hours from Manila.</p>
           <p className="max-w-2xl">Passive cooling draws sea air through every room, so homes stay comfortable without heavy air-conditioning.</p>
-          <p className="t-eyebrow text-bronze">Anilao · Mabini · Batangas</p>
+          <p className="t-eyebrow text-bronze-ink">Anilao · Mabini · Batangas</p>
           <p className="t-caption">Artist&apos;s perspective. Final design may change.</p>
         </Container>
       </Section>

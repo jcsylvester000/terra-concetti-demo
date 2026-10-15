@@ -14,11 +14,15 @@ export function SiteHeader() {
     name: p.nameWithPlace,
     location: p.location,
     status: statusLabel(p),
-    image: images[p.cardImage].src,
+    image: { src: images[p.cardImage].src.src, width: images[p.cardImage].src.width, height: images[p.cardImage].src.height },
     alt: images[p.cardImage].alt,
   }));
   return (
-    <header className="sticky top-0 z-40 border-b border-line/80 bg-linen/95 backdrop-blur supports-[backdrop-filter]:bg-linen/85">
+    <>
+      <Link href="#main" className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-3 focus:z-50 focus:bg-shell focus:px-4 focus:py-2">
+        Skip to main content
+      </Link>
+    <header className="sticky top-0 z-40 border-b border-line/80 bg-linen">
       <div className="mx-auto flex h-[72px] w-full max-w-[1280px] items-center justify-between gap-6 px-4 md:px-6 lg:px-8">
         <Logo />
         <nav aria-label="Main" className="hidden lg:block">
@@ -43,9 +47,7 @@ export function SiteHeader() {
           />
         </div>
       </div>
-      <Link href="#main" className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-20 focus:z-50 focus:bg-shell focus:px-4 focus:py-2">
-        Skip to main content
-      </Link>
     </header>
+    </>
   );
 }

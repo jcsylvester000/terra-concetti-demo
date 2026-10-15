@@ -1,28 +1,7 @@
 import { expect, test } from "@playwright/test";
 
 /** Batch 2+: page-level acceptance checks. ROUTES grows with each batch. */
-export const ROUTES = [
-  "/",
-  "/destinations",
-  "/destinations/the-coral-anilao",
-  "/destinations/the-coral-anilao/residences",
-  "/destinations/ocean-view-anilao",
-  "/destinations/mabini-golf-country-club",
-  "/destinations/the-urban-coral",
-  "/about",
-  "/sustainability",
-  "/anilao",
-  "/ownership",
-  "/invest",
-  "/contact",
-  "/legal/privacy-notice",
-  "/legal/terms",
-  "/legal/disclaimers",
-  "/journal",
-  "/journal/how-to-get-to-anilao-from-manila",
-  "/journal/why-we-plan-bamboo-for-every-hectare",
-  "/journal/inside-the-coral-design-story",
-];
+import { ROUTES } from "./routes";
 
 for (const path of ROUTES) {
   test(`${path}: 200, one H1, canonical, no contact links, no horizontal scroll`, async ({ page }) => {
@@ -99,16 +78,18 @@ test("Ownership has no visa or citizenship claims and keeps the no-guarantee not
 
 test("Q&A accordion opens by keyboard (P11-AC4)", async ({ page }) => {
   await page.goto("/ownership");
-  const trigger = page.getByRole("button", { name: /Are prices published/ });
-  await trigger.focus();
+  const summary = page.locator("summary", { hasText: "Are prices published" });
+  await summary.focus();
   await page.keyboard.press("Enter");
-  await expect(trigger).toHaveAttribute("aria-expanded", "true");
+  await expect(page.locator("details", { has: summary })).toHaveAttribute("open", "");
 });
 
 test("Why Anilao: 26 dive sites as text, never 50+, 1,200+ words, TouristDestination LD (P10)", async ({ page }) => {
   await page.goto("/anilao");
   const main = page.locator("main");
   await expect(main.locator('h3:has-text("The 26 documented dive sites") + ol > li')).toHaveCount(26);
+  // Render every section (content-visibility skips off-screen ones) before reading the visible text.
+  await page.evaluate(() => document.querySelectorAll<HTMLElement>("[data-cv]").forEach((el) => (el.style.contentVisibility = "visible")));
   const text = await main.innerText();
   expect(text).not.toMatch(/50\+/);
   expect(text.split(/\s+/).length).toBeGreaterThan(1200);

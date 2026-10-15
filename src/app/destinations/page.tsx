@@ -28,7 +28,7 @@ export default function DestinationsPage() {
           <Breadcrumbs items={[{ name: "Destinations", path: "/destinations" }]} />
           <div className="mt-10 grid gap-10 lg:grid-cols-[1fr_1.1fr] lg:items-end">
             <div>
-              <p className="t-eyebrow text-bronze">Batangas · Makati</p>
+              <p className="t-eyebrow text-bronze-ink">Batangas · Makati</p>
               <h1 className="t-display-xl mt-4">Our destinations</h1>
               <p className="t-lead mt-6 max-w-xl text-forest/85">
                 Batangas is Terra Concetti&apos;s first home. Two communities sit above Anilao&apos;s coast, two hours from Manila, with a golf estate and a city gateway in

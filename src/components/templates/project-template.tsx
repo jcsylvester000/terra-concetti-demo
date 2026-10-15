@@ -128,8 +128,8 @@ export function ProjectTemplate({ project: p }: { project: Project }) {
             </div>
             {p.page.siteViews ? (
               <div className="mt-12">
-                <p className="t-eyebrow text-bronze">Actual views from the site</p>
-                <ul className={`-mx-4 mt-4 flex snap-x gap-3 overflow-x-auto px-4 pb-2 md:mx-0 md:grid md:grid-cols-3 md:overflow-visible md:px-0 ${p.page.siteViews.length > 3 ? "lg:grid-cols-5" : ""}`}>
+                <p className="t-eyebrow text-bronze-ink">Actual views from the site</p>
+                <ul tabIndex={0} aria-label="Actual views from the site" className={`-mx-4 mt-4 flex snap-x scroll-px-4 gap-3 overflow-x-auto px-4 pb-2 md:mx-0 md:grid md:grid-cols-3 md:overflow-visible md:px-0 ${p.page.siteViews.length > 3 ? "lg:grid-cols-5" : ""}`}>
                   {p.page.siteViews.map((k) => (
                     <li key={k} className="w-[70%] shrink-0 snap-start md:w-auto">
                       <Media image={k} sizes="(min-width: 1024px) 20vw, (min-width: 768px) 33vw, 70vw" className="aspect-[4/5] rounded-[6px]" fill caption="none" />

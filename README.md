@@ -3,7 +3,7 @@
 Marketing and SEO website for **Terra Concetti Properties Corp.**, built to the approved BRD
 (`6 - Final Documentation/Terra Concetti Website BRD - 2026-10-15/`, v1.2).
 
-- **Stack:** Next.js 16 (App Router) · React 19 · TypeScript (strict) · Tailwind CSS v4 · Motion
+- **Stack:** Next.js 16 (App Router) · React 19 · TypeScript (strict) · Tailwind CSS v4 · CSS scroll-driven animations (no animation library)
 - **No database.** All content lives in this repository (`src/content/*.ts`, journal in `src/content/journal/*.mdx`).
 - **Static HTML for every public page** (SEO), deployed on **Netlify** from GitHub.
 - **Contact is information-only** in Phase 1 (decisions D2/D4): phones, email and address are plain text.

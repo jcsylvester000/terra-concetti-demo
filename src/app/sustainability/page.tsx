@@ -69,7 +69,7 @@ export default function SustainabilityPage() {
             <ol className="grid gap-4 sm:grid-cols-2">
               {bambooSteps.map((s, i) => (
                 <li key={s.title} className="rounded-[6px] bg-shell p-6">
-                  <span className="t-eyebrow text-bronze">Step {i + 1}</span>
+                  <span className="t-eyebrow text-bronze-ink">Step {i + 1}</span>
                   <h3 className="t-h4 mt-2">{s.title}</h3>
                   <p className="mt-2 text-[15px] leading-6 text-forest/80">{s.text}</p>
                 </li>

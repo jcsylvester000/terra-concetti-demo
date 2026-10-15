@@ -40,7 +40,6 @@ const nextConfig: NextConfig = {
   trailingSlash: false,
   // Put metadata in the initial HTML for every crawler (agency SEO rule, W08).
   htmlLimitedBots: /.*/,
-  experimental: { inlineCss: true },
   images: { formats: ["image/avif", "image/webp"] },
   env: {
     NEXT_PUBLIC_SITE_URL: siteUrl,

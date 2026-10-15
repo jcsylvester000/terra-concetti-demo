@@ -28,7 +28,7 @@ export default function ContactPage() {
         <Container className="relative">
           <Breadcrumbs items={[{ name: "Contact", path: "/contact" }]} />
           <div className="mt-10 max-w-3xl">
-            <p className="t-eyebrow text-bronze">Contact</p>
+            <p className="t-eyebrow text-bronze-ink">Contact</p>
             <h1 className="t-display-xl mt-4">Contact Terra Concetti</h1>
             <p className="t-lead mt-6 text-forest/85">
               For information about our destinations, residences, ownership or a site visit, call or email our team.

@@ -1,6 +1,6 @@
 "use client";
 
-import Image, { type StaticImageData } from "next/image";
+import Image from "next/image";
 import Link from "next/link";
 import { ChevronDown } from "lucide-react";
 import { useEffect, useId, useRef, useState } from "react";
@@ -8,7 +8,7 @@ import { cn } from "@/lib/cn";
 import { NavLink } from "./nav-link";
 import { StatusChip, type StatusText } from "@/components/ui/status-chip";
 
-type Item = { href: string; name: string; location: string; status: StatusText; image: StaticImageData; alt: string };
+type Item = { href: string; name: string; location: string; status: StatusText; image: { src: string; width: number; height: number }; alt: string };
 
 /**
  * Destinations mega-menu (BRD §5.3, N-AC1/N-AC2). The panel links are always in the server HTML
@@ -77,7 +77,7 @@ export function DestinationsMenu({ label, href, items }: { label: string; href: 
           ))}
         </div>
         <div className="mx-auto max-w-[1280px] px-8 pb-6">
-          <Link href={href} onClick={() => setOpen(false)} className="t-eyebrow text-bronze hover:text-forest">
+          <Link href={href} onClick={() => setOpen(false)} className="t-eyebrow text-bronze-ink hover:text-forest">
             All destinations →
           </Link>
         </div>
