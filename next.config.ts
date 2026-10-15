@@ -12,13 +12,19 @@ const allowIndexing =
 
 const gtm = process.env.NEXT_PUBLIC_GTM_ID ?? "";
 
+/**
+ * `next dev` only: React uses eval() for debugging and Next.js hot reload uses a websocket.
+ * Production builds keep the strict policy (no 'unsafe-eval', no ws:).
+ */
+const isDev = process.env.NODE_ENV !== "production";
+
 const csp = [
   "default-src 'self'",
-  `script-src 'self' 'unsafe-inline'${gtm ? " https://www.googletagmanager.com https://connect.facebook.net" : ""}`,
+  `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ""}${gtm ? " https://www.googletagmanager.com https://connect.facebook.net" : ""}`,
   "style-src 'self' 'unsafe-inline'",
   "img-src 'self' data: blob: https:",
   "font-src 'self'",
-  `connect-src 'self'${gtm ? " https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://www.facebook.com" : ""}`,
+  `connect-src 'self'${isDev ? " ws: wss:" : ""}${gtm ? " https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://www.facebook.com" : ""}`,
   "frame-ancestors 'none'",
   "base-uri 'self'",
   "form-action 'self'",
