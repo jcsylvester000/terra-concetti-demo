@@ -10,7 +10,7 @@ import { JsonLd } from "@/lib/jsonld";
 import { absoluteUrl } from "@/lib/env";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Coastal Communities in Batangas | Terra Concetti Destinations",
+  title: "Coastal Communities in Batangas | Terra Concetti",
   description:
     "The Coral and Ocean View in Anilao, with Mabini Golf & Country Club and The Urban Coral coming soon. Find your Terra Concetti destination.",
   path: "/destinations",

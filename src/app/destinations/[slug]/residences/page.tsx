@@ -18,7 +18,7 @@ export function generateStaticParams() {
 }
 
 export const metadata: Metadata = pageMetadata({
-  title: "Villas, Townhouses & Condos at The Coral, Anilao | Terra Concetti",
+  title: "Residences at The Coral, Anilao | Terra Concetti",
   description:
     "Single detached villas, townhouse villas, treehouse villas and condominium residences at The Coral at Anilao. Sizes, floor plans and site visits.",
   path: "/destinations/the-coral-anilao/residences",

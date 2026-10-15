@@ -18,6 +18,10 @@ export const ROUTES = [
   "/legal/privacy-notice",
   "/legal/terms",
   "/legal/disclaimers",
+  "/journal",
+  "/journal/how-to-get-to-anilao-from-manila",
+  "/journal/why-we-plan-bamboo-for-every-hectare",
+  "/journal/inside-the-coral-design-story",
 ];
 
 for (const path of ROUTES) {

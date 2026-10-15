@@ -76,3 +76,21 @@ export const designPartner = {
 };
 
 export const getPerson = (slug: string) => team.find((p) => p.slug === slug);
+
+/**
+ * Journal byline used until TCPC assigns named authors to articles (BRD P14-AC1 asks for named
+ * authors from this file). Articles are written by the agency (decision D7), so they are not
+ * attributed to a named person who has not reviewed them.
+ */
+export const editorialAuthor = {
+  slug: "editorial",
+  name: "Terra Concetti Journal",
+  role: "Editorial team, Terra Concetti Properties Corp.",
+  short: "Guides and stories from the team building sustainable communities above Anilao's reefs.",
+};
+
+export function getAuthor(slug: string) {
+  if (slug === editorialAuthor.slug) return { ...editorialAuthor, isPerson: false as const };
+  const p = getPerson(slug);
+  return p ? { slug: p.slug, name: p.name, role: p.role, short: p.short, isPerson: true as const } : undefined;
+}

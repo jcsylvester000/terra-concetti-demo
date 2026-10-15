@@ -11,6 +11,7 @@ import { NumberTicker } from "@/components/motion/number-ticker";
 import { diveSites, journey } from "@/content/anilao";
 import { projects } from "@/content/projects";
 import { pageMetadata } from "@/lib/seo";
+import { articlePath, getArticles } from "@/lib/journal";
 import { JsonLd } from "@/lib/jsonld";
 import { absoluteUrl } from "@/lib/env";
 
@@ -260,9 +261,19 @@ export default function AnilaoPage() {
               <li key={p.slug} className="flex"><ProjectCard project={p} /></li>
             ))}
           </ul>
-          <p className="mt-8 text-forest/85">
-            More guides to Anilao, diving and ownership are in our <TextLink href="/journal">Journal</TextLink>
-          </p>
+          <div className="mt-12 rounded-[6px] bg-linen p-6">
+            <h3 className="t-h4">Guides from the Journal</h3>
+            <ul className="mt-3 space-y-1">
+              {getArticles()
+                .filter((a) => a.category === "Dive & destination" || a.category === "Sustainability")
+                .map((a) => (
+                  <li key={a.slug}>
+                    <a href={articlePath(a)} className="inline-flex min-h-11 items-center font-medium text-moss underline decoration-gold decoration-2 underline-offset-4 hover:text-forest">{a.title}</a>
+                  </li>
+                ))}
+            </ul>
+            <TextLink href="/journal" className="mt-3">All journal articles</TextLink>
+          </div>
         </Container>
       </Section>
 

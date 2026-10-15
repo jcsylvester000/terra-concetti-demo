@@ -91,7 +91,7 @@ const data: Project[] = [
     // Approximate (Anilao, Mabini). Replace with surveyed coordinates from TCPC.
     geo: { lat: 13.762, lng: 120.925 },
     seo: {
-      title: "The Coral at Anilao | Villas & Residences in Mabini, Batangas",
+      title: "The Coral at Anilao | Villas & Residences, Mabini Batangas",
       description:
         "A diving and resort community of 68 villas, townhouses, treehouses and condos above Anilao's reefs. See the residences, design and location.",
     },
@@ -179,7 +179,7 @@ const data: Project[] = [
     // Approximate (Anilao, Mabini). Replace with surveyed coordinates from TCPC.
     geo: { lat: 13.762, lng: 120.925 },
     seo: {
-      title: "Ocean View Anilao | Condos & Cliff Houses in Mabini, Batangas",
+      title: "Ocean View Anilao | Condos & Cliff Houses, Mabini Batangas",
       description:
         "Resort-style condos, townhouses and cliff houses on the coast of Anilao, Batangas. See the residences, sustainability features and views.",
     },

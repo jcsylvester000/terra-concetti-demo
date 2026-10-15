@@ -1,4 +1,5 @@
 import { projects, projectPath } from "@/content/projects";
+import { articlePath, getArticles } from "@/lib/journal";
 
 /**
  * Every indexable static route with its last meaningful content change (sitemap lastmod, S-AC4).
@@ -15,6 +16,7 @@ export const staticRoutes: RouteEntry[] = [
   { path: "/ownership", lastModified: "2026-10-15", priority: 0.8 },
   { path: "/invest", lastModified: "2026-10-15", priority: 0.5 },
   { path: "/contact", lastModified: "2026-10-15", priority: 0.7 },
+  { path: "/journal", lastModified: "2026-10-15", priority: 0.7 },
   { path: "/legal/privacy-notice", lastModified: "2026-10-15", priority: 0.2 },
   { path: "/legal/terms", lastModified: "2026-10-15", priority: 0.2 },
   { path: "/legal/disclaimers", lastModified: "2026-10-15", priority: 0.2 },
@@ -25,8 +27,12 @@ export const projectRoutes: RouteEntry[] = [
   { path: "/destinations/the-coral-anilao/residences", lastModified: "2026-10-15", priority: 0.8 },
 ];
 
+export function articleRoutes(): RouteEntry[] {
+  return getArticles().map((a) => ({ path: articlePath(a), lastModified: a.updated ?? a.date, priority: 0.6 }));
+}
+
 export function allRoutes(): RouteEntry[] {
-  return [...staticRoutes, ...projectRoutes];
+  return [...staticRoutes, ...projectRoutes, ...articleRoutes()];
 }
 
 export { projects, projectPath };

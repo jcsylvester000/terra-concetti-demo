@@ -119,7 +119,7 @@ export const images = {
   underwaterGrid: img(underwaterGrid, "Grid of underwater macro photographs of Anilao's corals, nudibranchs and reef life", "photo", "S. 16", { credit: "Irwin Cua" }),
   billionBricksHouse: img(billionBricksHouse, "Billion Bricks house concept with solar roof, rainwater harvesting, cross-ventilation and an elevated flood-resilient base", "diagram", "S. 21"),
   communityActivities: img(communityActivities, "Community activities: The Pink Argonauts, underwater and coastal clean-ups, mangrove planting and marine wildlife monitoring", "photo", "S. 24"),
-  bambooRatio: img(bambooRatio, "The 1:10 development-to-bamboo carbon ratio explained in four steps", "diagram", "S. 23"),
+  bambooRatio: img(bambooRatio, "The 1:10 development-to-bamboo carbon ratio explained in four steps", "diagram", "S. 23 (certification logos removed, BRD P03-AC1)"),
   philippinesGateway: img(philippinesGateway, "Map of the Philippines with Batangas as the current destination and prospective locations under study", "diagram", "S. 181"),
   monogramPlaster: img(monogramPlaster, "Terra Concetti leaf monogram on green plaster", "diagram", "S. 1"),
 } satisfies Record<string, SiteImage>;
