@@ -10,7 +10,7 @@ import { absoluteUrl } from "@/lib/env";
 
 export const metadata: Metadata = pageMetadata({
   title: "Journal | Anilao Living, Diving & Ownership | Terra Concetti",
-  description: "Guides to Anilao and its dive sites, how we build sustainably, ownership explained and updates from Terra Concetti's destinations.",
+  description: "Guides to Anilao and its dive sites, how we build sustainably, ownership explained and updates from Terra Concetti’s destinations.",
   path: "/journal",
   absoluteTitle: true,
 });

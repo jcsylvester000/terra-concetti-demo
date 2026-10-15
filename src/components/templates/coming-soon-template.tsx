@@ -1,3 +1,4 @@
+import { galleryCellClass } from "@/lib/gallery";
 import { Container, Section, SectionHeading } from "@/components/ui/layout";
 import { Media } from "@/components/ui/media";
 import { ContactBlock } from "@/components/ui/contact";
@@ -48,12 +49,7 @@ export function ComingSoonTemplate({ project: p }: { project: Project }) {
             className="mt-10 grid-cols-2 md:grid-cols-4"
             cells={p.page.gallery.map((k, i) => ({
               key: k,
-              className:
-                p.page.gallery.length > 2
-                  ? i === 0
-                    ? "col-span-2 row-span-2 aspect-square md:aspect-auto"
-                    : "aspect-[4/3]"
-                  : "col-span-2 aspect-[16/10]",
+              className: galleryCellClass(p.page.gallery.length, i),
               content: <Media image={k} sizes={i === 0 ? "(min-width: 768px) 50vw, 100vw" : "(min-width: 768px) 25vw, 50vw"} className="h-full rounded-[6px]" fill />,
             }))}
           />

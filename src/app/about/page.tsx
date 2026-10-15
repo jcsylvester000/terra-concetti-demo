@@ -21,14 +21,13 @@ export const metadata: Metadata = pageMetadata({
 });
 
 const timeline = [
-  { year: "2017", title: "Founders connect", text: "Our founders meet as honorees of the Lamudi Real Estate Power Women." },
-  { year: "ULI", title: "Leadership in the industry", text: "They co-chair efforts in the Urban Land Institute Women's Leadership Initiative." },
+  { year: "2017", title: "Founders connect", text: "Our founders meet as honorees of the Lamudi Real Estate Power Women, and go on to co-chair efforts in the Urban Land Institute Women’s Leadership Initiative." },
   { year: "2023", title: "A first pilot", text: "A pilot sustainable community is launched in Bagac, Bataan." },
   { year: "2025", title: "To the coast", text: "Tessa Neri joins, and the pipeline expands into eco-luxury coastal, resort-residential and integrated communities, beginning in Anilao." },
 ];
 
 const approach = [
-  { title: "End-user insight", text: "We are divers, travelers and property investors ourselves, so our developments are shaped by real market insight." },
+  { title: "End-user insight", text: "We are divers, travellers and property investors ourselves, so our developments are shaped by real market insight." },
   { title: "Agile and responsive", text: "A compact structure allows faster decisions and adaptation, without the bureaucracy of larger corporations." },
   { title: "Transparent operations", text: "Backed by decades of multi-million-dollar real-estate experience, we hold every project to high standards of governance and delivery." },
   { title: "Luxury eco developments", text: "Premium, sustainable communities that join design excellence and environmental care." },
@@ -53,7 +52,7 @@ export default function AboutPage() {
           <TextReveal
             as="p"
             className="t-display max-w-4xl"
-            text="For Filipino and international buyers who want a home by the sea that does right by the place, we create eco-luxury communities in the Philippines' most beautiful natural settings."
+            text="For Filipino and international buyers who want a home by the sea that does right by the place, we create eco-luxury communities in the Philippines’ most beautiful natural settings."
           />
         </Container>
       </Section>

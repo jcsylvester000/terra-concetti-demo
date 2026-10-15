@@ -1,3 +1,4 @@
+import { galleryCellClass } from "@/lib/gallery";
 import { Container, Section, SectionHeading, Eyebrow } from "@/components/ui/layout";
 import { ButtonLink, TextLink } from "@/components/ui/button-link";
 import { Media } from "@/components/ui/media";
@@ -222,7 +223,7 @@ export function ProjectTemplate({ project: p }: { project: Project }) {
             className="mt-10 grid-cols-2 md:grid-cols-4"
             cells={p.page.gallery.map((k, i) => ({
               key: k,
-              className: p.page.gallery.length <= 2 ? "col-span-2 aspect-[16/10]" : i === 0 ? "col-span-2 row-span-2 aspect-square md:aspect-auto" : "aspect-[4/3]",
+              className: galleryCellClass(p.page.gallery.length, i),
               content: <Media image={k} sizes={i === 0 ? "(min-width: 768px) 50vw, 100vw" : "(min-width: 768px) 25vw, 50vw"} className="h-full min-h-full rounded-[6px]" fill />,
             }))}
           />
@@ -234,7 +235,7 @@ export function ProjectTemplate({ project: p }: { project: Project }) {
           <SectionHeading eyebrow="Owner benefits" title="Owning here, looked after" />
           <div>
             <p className="text-forest/85">
-              Owners can expect in-house property management, concierge, a dive-center discount and an optional rental pool with a 10-year agreement renewable by the owner, plus
+              Owners can expect in-house property management, concierge, a dive-centre discount and an optional rental pool with a 10-year agreement renewable by the owner, plus
               owner nights and priority.
             </p>
             <p className="t-caption mt-3">Owner benefits are subject to the final rental and management agreements. No income or return is guaranteed.</p>

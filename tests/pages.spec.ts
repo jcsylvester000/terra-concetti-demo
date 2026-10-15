@@ -14,7 +14,7 @@ for (const path of ROUTES) {
     expect(overflow).toBeLessThanOrEqual(1);
     // Every render on the page carries the "Artist's perspective" label (M-AC2).
     const renders = await page.locator('img[alt*="artist\'s perspective"]').count();
-    if (renders) await expect(page.getByText(/Artist's perspective/).first()).toBeAttached();
+    if (renders) await expect(page.getByText(/Artist[’']s perspective/).first()).toBeAttached();
   });
 }
 

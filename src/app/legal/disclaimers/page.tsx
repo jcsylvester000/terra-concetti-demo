@@ -14,7 +14,7 @@ export default function DisclaimersPage() {
     <LegalPage title="Disclaimers" path="/legal/disclaimers">
       <h2>Renders and images</h2>
       <p>
-        Renders and illustrations are artist&apos;s perspectives. Final design, materials, specifications, landscaping and furnishings may change. Concept imagery for
+        Renders and illustrations are artist’s perspectives. Final design, materials, specifications, landscaping and furnishings may change. Concept imagery for
         projects in planning shows the intended mood only.
       </p>
       <h2>Plans, sizes and facts</h2>

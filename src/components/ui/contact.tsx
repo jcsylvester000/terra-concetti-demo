@@ -37,7 +37,7 @@ export function ContactDetails({ onDark, className, compact }: { onDark?: boolea
   );
 }
 
-/** End-of-page contact block used on every page (replaces the brief's conversion bands in Phase 1). */
+/** End-of-page contact block used on every page (replaces the brief’s conversion bands in Phase 1). */
 export function ContactBlock({
   title = "Speak with our team",
   intro = "For information about our destinations, residences or site visits, reach us directly.",

@@ -18,7 +18,7 @@ import { absoluteUrl } from "@/lib/env";
 export const metadata: Metadata = pageMetadata({
   title: "Anilao, Batangas: Dive Sites, Getting There & When to Go",
   description:
-    "A local's guide to Anilao: 26 dive sites, the best months for visibility, how to get there from Manila and where to stay or own a home.",
+    "A local’s guide to Anilao: 26 dive sites, the best months for visibility, how to get there from Manila and where to stay or own a home.",
   path: "/anilao",
   absoluteTitle: true,
 });
@@ -32,7 +32,7 @@ const seasons = [
 const around = [
   { title: "Taal", text: "The heritage town of Taal and the Taal Lake area make an easy day trip from Anilao." },
   { title: "Mt. Gulugod Baboy", text: "A short hike above Mabini with wide views over Balayan Bay and the islands." },
-  { title: "Batangas City", text: "The province's port and services hub, about 17 km (45 minutes) away, with shopping and a planned medical facility." },
+  { title: "Batangas City", text: "The province’s port and services hub, about 17 km (45 minutes) away, with shopping and a planned medical facility." },
   { title: "Bauan", text: "Bauan Doctors hospital is about 20 km (35 minutes) from the Anilao coast." },
 ];
 
@@ -42,7 +42,7 @@ export default function AnilaoPage() {
   return (
     <>
       <PageHero
-        image="siteSunsetSombrero"
+        image="anilaoBay"
         size="medium"
         eyebrow="Destination guide · Mabini, Batangas"
         title="Anilao, Batangas: dive sites, getting there and when to go"
@@ -73,7 +73,7 @@ export default function AnilaoPage() {
                 specialist underwater photographers.
               </p>
               <p>
-                What makes Anilao unusual is how close it is. Most of the country&apos;s celebrated dive destinations need a flight and a boat transfer. Anilao needs a car
+                What makes Anilao unusual is how close it is. Most of the country’s celebrated dive destinations need a flight and a boat transfer. Anilao needs a car
                 and about two hours from Manila. That combination of world-renowned reefs and easy access is why we chose it as the first home of Terra Concetti, and why
                 this guide exists: to help you get to know the place before you get to know our homes.
               </p>
@@ -97,7 +97,7 @@ export default function AnilaoPage() {
                 a good sign of how highly the dive community rates it.
               </p>
               <p>
-                For residents, that heritage means a local community that understands the sea: dive centers, boat operators and conservation groups who have worked these
+                For residents, that heritage means a local community that understands the sea: dive centres, boat operators and conservation groups who have worked these
                 waters for decades.
               </p>
             </div>
@@ -132,11 +132,11 @@ export default function AnilaoPage() {
               <p className="t-caption mt-4">Names as listed by Terra Concetti; local spellings vary between dive operators.</p>
               <div className="prose-tc mt-6 text-forest/85">
                 <p>
-                  Most sites are a short boat ride from the Anilao shoreline. Guided dives are the norm, and local dive centers know which sites suit the day&apos;s
+                  Most sites are a short boat ride from the Anilao shoreline. Guided dives are the norm, and local dive centres know which sites suit the day’s
                   conditions, from gentle slopes for new divers to deeper sites for the experienced.
                 </p>
                 <p>
-                  Macro photographers often spend a whole trip on a handful of sites, while newer divers find calm, shallow reefs close to shore. A premium dive center is
+                  Macro photographers often spend a whole trip on a handful of sites, while newer divers find calm, shallow reefs close to shore. A premium dive centre is
                   planned within The Coral for residents and guests.
                 </p>
               </div>
@@ -193,8 +193,8 @@ export default function AnilaoPage() {
           <SectionHeading eyebrow="First visit" title="Tips for diving Anilao" lead="A few habits that make a first trip easier, and kinder to the reef." />
           <ul className="grid gap-4 sm:grid-cols-2">
             {[
-              { t: "Dive with a local dive center", d: "Guided dives are the norm in Anilao. Local guides know the currents, the best sites for the day and where the rarest macro life is hiding." },
-              { t: "Look, don't touch", d: "Keep fins off the reef, never collect shells or coral, and use a reef-safe sunscreen. The macro life that makes Anilao famous depends on it." },
+              { t: "Dive with a local dive centre", d: "Guided dives are the norm in Anilao. Local guides know the currents, the best sites for the day and where the rarest macro life is hiding." },
+              { t: "Look, don’t touch", d: "Keep fins off the reef, never collect shells or coral, and use a reef-safe sunscreen. The macro life that makes Anilao famous depends on it." },
               { t: "Choose your style of dive", d: "Gentle reef slopes suit new divers; pinnacles and walls reward experienced divers; slow muck and night dives are where photographers find nudibranchs and frogfish." },
               { t: "Plan around the weekend", d: "Weekdays are quieter on the road and on the dive sites. On holiday weekends, leave Manila early and allow extra time for the drive." },
             ].map((tip) => (
@@ -228,7 +228,7 @@ export default function AnilaoPage() {
 
       <Section>
         <Container>
-          <SectionHeading eyebrow="Around Batangas" title="Beyond the water" lead="Batangas is more than a dive coast. Heritage towns, hills and the province's main city are all within reach." />
+          <SectionHeading eyebrow="Around Batangas" title="Beyond the water" lead="Batangas is more than a dive coast. Heritage towns, hills and the province’s main city are all within reach." />
           <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {around.map((a) => (
               <li key={a.title} className="rounded-[6px] bg-shell p-6 ring-1 ring-line/70">
@@ -240,11 +240,11 @@ export default function AnilaoPage() {
           <div className="prose-tc mt-8 text-forest/85">
             <p>
               Batangas has grown quickly as a place to visit and to live. The province is often described through its &ldquo;five Ps&rdquo;: a pro-business provincial
-              government, its role as Luzon&apos;s power hub, its ports, an English-proficient workforce, and the place itself, with its beaches, dive sites and heritage.
+              government, its role as Luzon’s power hub, its ports, an English-proficient workforce, and the place itself, with its beaches, dive sites and heritage.
             </p>
             <p>
-              Several of the country&apos;s established developers have built leisure estates in the province, and the coast around Anilao keeps its own character: small
-              resorts, dive centers and fishing villages on a green, steep shoreline.
+              Several of the country’s established developers have built leisure estates in the province, and the coast around Anilao keeps its own character: small
+              resorts, dive centres and fishing villages on a green, steep shoreline.
             </p>
           </div>
         </Container>

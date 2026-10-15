@@ -60,14 +60,14 @@ export default function StyleguidePage() {
       <Section>
         <Container className="space-y-6">
           <SectionHeading eyebrow="Typography" title="Type scale" />
-          <p className="t-display-xl">Live above Anilao&apos;s reefs</p>
+          <p className="t-display-xl">Live above Anilao’s reefs</p>
           <p className="t-display">Development with purpose</p>
           <p className="t-h3">Single Detached Villas</p>
-          <p className="t-h4">Premium dive center</p>
+          <p className="t-h4">Premium dive centre</p>
           <p className="t-lead max-w-2xl">Sustainable villas and residences two hours from Manila.</p>
           <p className="max-w-2xl">Passive cooling draws sea air through every room, so homes stay comfortable without heavy air-conditioning.</p>
           <p className="t-eyebrow text-bronze-ink">Anilao · Mabini · Batangas</p>
-          <p className="t-caption">Artist&apos;s perspective. Final design may change.</p>
+          <p className="t-caption">Artist’s perspective. Final design may change.</p>
         </Container>
       </Section>
 

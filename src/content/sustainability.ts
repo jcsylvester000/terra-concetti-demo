@@ -8,7 +8,7 @@ export const areas = [
     title: "Life beneath water",
     lead: "The reefs are the reason Anilao matters. Protecting them is part of the project, not an add-on.",
     body: [
-      "Anilao's reefs hold some of the richest macro life in the Philippines: soft corals, nudibranchs, frogfish and reef fish photographed by divers from around the world. Our team includes divers, and one of our directors co-founded a marine conservation group in Anilao.",
+      "Anilao’s reefs hold some of the richest macro life in the Philippines: soft corals, nudibranchs, frogfish and reef fish photographed by divers from around the world. Our team includes divers, and one of our directors co-founded a marine conservation group in Anilao.",
       "We plan our communities to keep runoff, waste and light away from the shoreline, and we support community-based conservation: underwater and coastal clean-ups, coastal biodiversity walks, mangrove planting and marine wildlife monitoring.",
     ],
     image: "underwaterGrid" as const,
@@ -31,7 +31,7 @@ export const areas = [
       "Rainwater is planned to be collected and reused for gardens, cooling ponds and other non-potable uses. Permeable paths and bioswales let rain soak into the ground instead of running down to the sea.",
       "Landscapes use native species that need less water and support local wildlife, with community gardens, bamboo groves and retained forest on the slopes. Homes are raised and designed to be flood-resilient.",
     ],
-    image: "ovSustainability" as const,
+    image: "siteSlope" as const,
   },
   {
     id: "materials-and-ecology",

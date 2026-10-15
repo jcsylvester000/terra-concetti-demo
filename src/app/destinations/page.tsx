@@ -31,7 +31,7 @@ export default function DestinationsPage() {
               <p className="t-eyebrow text-bronze-ink">Batangas · Makati</p>
               <h1 className="t-display-xl mt-4">Our destinations</h1>
               <p className="t-lead mt-6 max-w-xl text-forest/85">
-                Batangas is Terra Concetti&apos;s first home. Two communities sit above Anilao&apos;s coast, two hours from Manila, with a golf estate and a city gateway in
+                Batangas is Terra Concetti’s first home. Two communities sit above Anilao’s coast, two hours from Manila, with a golf estate and a city gateway in
                 planning.
               </p>
             </div>

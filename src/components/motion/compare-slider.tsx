@@ -26,7 +26,7 @@ export function CompareSlider({ today, planned, caption }: { today: SiteImage; p
           </span>
         </div>
         <span className="t-eyebrow absolute top-3 left-3 rounded-[2px] bg-forest/75 px-2 py-1 !text-[10.5px] text-shell">Today</span>
-        <span className="t-eyebrow absolute top-3 right-3 rounded-[2px] bg-forest/75 px-2 py-1 !text-[10.5px] text-shell">Planned<span className="hidden sm:inline"> · Artist&apos;s perspective</span></span>
+        <span className="t-eyebrow absolute top-3 right-3 rounded-[2px] bg-forest/75 px-2 py-1 !text-[10.5px] text-shell">Planned<span className="hidden sm:inline"> · Artist’s perspective</span></span>
         <label htmlFor={id} className="sr-only">Compare today and planned. Move left for more of the plan, right for more of today.</label>
         <input
           id={id}

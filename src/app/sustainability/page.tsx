@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 import { Container, Section, SectionHeading, Eyebrow } from "@/components/ui/layout";
 import { ButtonLink } from "@/components/ui/button-link";
 import { Media } from "@/components/ui/media";
+import { images } from "@/content/images";
 import { StatBlock } from "@/components/ui/blocks";
 import { ContactBlock } from "@/components/ui/contact";
 import { SimpleHero } from "@/components/sections/simple-hero";
-import { NumberTicker } from "@/components/motion/number-ticker";
 import { areas, bambooSteps, communityActivities, communityThemes } from "@/content/sustainability";
 import { pageMetadata } from "@/lib/seo";
 
@@ -26,7 +26,7 @@ export default function SustainabilityPage() {
         eyebrow="Sustainability · Conservation · Community"
         title="Development with purpose"
         lead="Sustainability is not a feature we add at the end. It shapes where we build, how homes are designed, what they are made of and how the land and reef around them are looked after."
-        aside={<Media image="coralSustainableDesign" sizes="(min-width: 1024px) 50vw, 100vw" priority className="rounded-[6px]" />}
+        aside={<Media image="ovSustainability" sizes="(min-width: 1024px) 50vw, 100vw" priority className="rounded-[6px]" />}
       />
 
       <nav aria-label="On this page" className="border-y border-line bg-shell">
@@ -54,7 +54,7 @@ export default function SustainabilityPage() {
                 {a.body.map((t) => <p key={t}>{t}</p>)}
               </div>
             </div>
-            <Media image={a.image} sizes="(min-width: 1024px) 50vw, 100vw" className="rounded-[6px] bg-shell ring-1 ring-line/60" caption="below" />
+            <Media image={a.image} sizes="(min-width: 1024px) 50vw, 100vw" className={`rounded-[6px] bg-shell ring-1 ring-line/60 ${images[a.image].src.height > images[a.image].src.width ? "mx-auto w-full max-w-sm" : ""}`} caption="below" />
           </Container>
         </Section>
       ))}
@@ -64,7 +64,7 @@ export default function SustainabilityPage() {
           <div className="grid gap-10 lg:grid-cols-[1fr_1.2fr] lg:items-start">
             <div>
               <SectionHeading eyebrow="Carbon" title="Our 1:10 bamboo benchmark" lead="For every hectare we develop, we plan for up to ten hectares of managed bamboo to absorb carbon. It is a preliminary planning benchmark, refined project by project." />
-              <StatBlock className="mt-8" eyebrow="Preliminary planning benchmark" statement={<>1 hectare built · up to <NumberTicker value={10} /> hectares of bamboo</>} note="Bamboo grows fast, stores carbon and can be harvested sustainably." />
+              <StatBlock className="mt-8" eyebrow="Preliminary planning benchmark" statement={<>1 hectare built · up to 10 hectares of bamboo</>} note="Bamboo grows fast, stores carbon and can be harvested sustainably." />
             </div>
             <ol className="grid gap-4 sm:grid-cols-2">
               {bambooSteps.map((s, i) => (

@@ -28,7 +28,7 @@ export default function TermsPage() {
         share pages for personal, non-commercial use. Any other use needs our written permission.
       </p>
       <h2>Image credits</h2>
-      <p>Underwater photography by Irwin Cua is used under licence. Renders are artist&apos;s perspectives prepared for Terra Concetti.</p>
+      <p>Underwater photography by Irwin Cua is used under licence. Renders are artist’s perspectives prepared for Terra Concetti.</p>
       <h2>Links to other sites</h2>
       <p>Links to third-party websites are provided for convenience. We are not responsible for their content or privacy practices.</p>
       <h2>Acceptable use</h2>

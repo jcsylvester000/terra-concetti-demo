@@ -52,7 +52,7 @@ export function SiteFooter() {
                 {site.licenseToSell[p.slug] ?? "to be published once issued"}.{i < selling.length - 1 ? " " : ""}
               </span>
             ))}{" "}
-            Renders are artist&apos;s perspectives; plans, specifications and availability may change. Nothing on this site is an offer to sell.
+            Renders are artist’s perspectives; plans, specifications and availability may change. Nothing on this site is an offer to sell.
           </p>
           <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
             <p>© {year} {site.legalName} All rights reserved.</p>

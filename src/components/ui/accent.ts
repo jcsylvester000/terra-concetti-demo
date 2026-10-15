@@ -1,7 +1,7 @@
 import type { CSSProperties } from "react";
 import type { Project } from "@/content/projects";
 
-/** Project accents as CSS variables, scoped to that project's pages (BRD §6.3, ≤ 4% of area). */
+/** Project accents as CSS variables, scoped to that project’s pages (BRD §6.3, ≤ 4% of area). */
 const map: Record<Project["accent"], { strong: string; text: string; soft: string }> = {
   coral: { strong: "#2C6E7E", text: "#2C6E7E", soft: "#429AAF" },
   ov: { strong: "#1F3A56", text: "#1F3A56", soft: "#D1E2F4" },

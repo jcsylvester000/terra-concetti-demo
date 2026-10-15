@@ -15,7 +15,7 @@ export function LegalPage({ title, path, children }: { title: string; path: stri
         </p>
         {!legal.reviewed ? (
           <p className="mt-6 max-w-3xl rounded-[6px] bg-status-reserved p-4 text-[15px]">
-            Draft for review by Terra Concetti&apos;s legal counsel. This page will be finalised before the site launches.
+            Draft for review by Terra Concetti’s legal counsel. This page will be finalised before the site launches.
           </p>
         ) : null}
         <div className="prose-tc mt-10 text-forest/85">{children}</div>

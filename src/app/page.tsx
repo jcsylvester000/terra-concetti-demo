@@ -19,7 +19,7 @@ import { JsonLd, organizationLd, websiteLd } from "@/lib/jsonld";
 
 export const metadata: Metadata = pageMetadata({
   title: "Terra Concetti | Sustainable Homes in Anilao, Batangas",
-  description: "Eco-luxury villas and residences above Anilao's reefs, two hours from Manila. Explore The Coral and Ocean View.",
+  description: "Eco-luxury villas and residences above Anilao’s reefs, two hours from Manila. Explore The Coral and Ocean View.",
   path: "/",
   absoluteTitle: true,
 });
@@ -32,9 +32,9 @@ const pillars = [
 ];
 
 const ownership = [
-  { title: "Filipino buyers", text: "Own a house and lot or a condominium residence outright.", href: "/ownership#filipino-buyers" },
-  { title: "Foreign buyers", text: "Own a condominium within the foreign-ownership limit, or a house through a long-term lease.", href: "/ownership#foreign-buyers" },
-  { title: "Owner benefits", text: "Property management, concierge, an optional rental pool and owner nights.", href: "/ownership#owner-benefits" },
+  { title: "Filipino buyers", text: "Own a house and lot or a condominium residence outright.", href: "/ownership#filipino-buyers", cta: "Ownership for Filipino buyers" },
+  { title: "Foreign buyers", text: "Own a condominium within the foreign-ownership limit, or a house through a long-term lease.", href: "/ownership#foreign-buyers", cta: "Ownership for foreign buyers" },
+  { title: "Owner benefits", text: "Property management, concierge, an optional rental pool and owner nights.", href: "/ownership#owner-benefits", cta: "See owner benefits" },
 ];
 
 /** P01 Home (BRD §7). */
@@ -45,7 +45,7 @@ export default function HomePage() {
       <PageHero
         image="homeHero"
         eyebrow="Anilao · Mabini · Batangas"
-        title={<>Live above Anilao&apos;s reefs.</>}
+        title={<>Live above Anilao’s reefs.</>}
         lead="Sustainable villas and residences in Anilao, Batangas, the birthplace of Philippine diving. Two hours from Manila."
         actions={<ButtonLink href="/destinations" variant="onDark">Explore destinations</ButtonLink>}
       />
@@ -81,7 +81,7 @@ export default function HomePage() {
             <SectionHeading
               eyebrow="Our destinations"
               title="Four places, one way of building"
-              lead="Two communities above Anilao's coast, and two concepts taking shape in Batangas and Makati."
+              lead="Two communities above Anilao’s coast, and two concepts taking shape in Batangas and Makati."
             />
             <TextLink href="/destinations" className="shrink-0">All destinations</TextLink>
           </div>
@@ -98,7 +98,7 @@ export default function HomePage() {
           <div>
             <SectionHeading
               eyebrow="Why Anilao"
-              title="Luzon's most accessible dive coast"
+              title="Luzon’s most accessible dive coast"
               lead="Anilao is where Philippine scuba diving began. Its reefs draw divers and underwater photographers from around the world, and you can reach them by car."
             />
             <ul className="mt-8 space-y-4">
@@ -128,7 +128,7 @@ export default function HomePage() {
             </div>
             <StatBlock
               eyebrow="Our bamboo benchmark"
-              statement={<>1 hectare built · up to <NumberTicker value={10} /> hectares of bamboo</>}
+              statement={<>1 hectare built · up to 10 hectares of bamboo</>}
               note="A preliminary planning benchmark for carbon sequestration across our developments."
             />
           </div>
@@ -147,7 +147,7 @@ export default function HomePage() {
                   <h3 className="t-h3">{o.title}</h3>
                   <p className="mt-3 text-forest/80">{o.text}</p>
                   <span className="mt-auto inline-flex items-center gap-2 pt-6 font-medium text-moss">
-                    Learn more <ArrowRight aria-hidden className="size-4 transition-transform group-hover:translate-x-1" />
+                    {o.cta} <ArrowRight aria-hidden className="size-4 transition-transform group-hover:translate-x-1" />
                   </span>
                 </Link>
               </li>
@@ -165,7 +165,7 @@ export default function HomePage() {
           </div>
           <TeamGrid className="mt-10" />
           <p className="mt-8 text-forest/85">
-            Designed with <strong className="font-semibold">{designPartner.name}</strong>, {designPartner.credentials.join(" and ")}.
+            Our architecture is designed with <strong className="font-semibold">{designPartner.name}</strong>, recognised in the {designPartner.credentials.join(" and the ")}.
           </p>
         </Container>
       </Section>

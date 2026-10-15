@@ -76,7 +76,7 @@ const data: Project[] = [
     location: "Mabini, Batangas",
     eyebrow: "Anilao · Mabini · Batangas",
     tagline: "A Diving and Resort Community",
-    summary: "A diving and resort community of 68 villas, townhouses, treehouses and residences above Anilao's reefs.",
+    summary: "A diving and resort community of 68 villas, townhouses, treehouses and residences above Anilao’s reefs.",
     salesStatus: "pre-launch",
     showPrices: false,
     accent: "coral",
@@ -93,12 +93,12 @@ const data: Project[] = [
     seo: {
       title: "The Coral at Anilao | Villas & Residences, Mabini Batangas",
       description:
-        "A diving and resort community of 68 villas, townhouses, treehouses and condos above Anilao's reefs. See the residences, design and location.",
+        "A diving and resort community of 68 villas, townhouses, treehouses and condos above Anilao’s reefs. See the residences, design and location.",
     },
     page: {
       intro: [
         "The Coral is a hillside community 60 to 80 metres above the sea, looking out to Sombrero and Tingloy Islands. It is planned for people who come to Anilao for the water and want a home that lets them stay longer.",
-        "Sixty-eight homes sit across 2.3 hectares: single detached villas, townhouse villas, treehouse villas and two clusters of condominium residences, with a premium dive center at the heart of the estate.",
+        "Sixty-eight homes sit across 2.3 hectares: single detached villas, townhouse villas, treehouse villas and two clusters of condominium residences, with a premium dive centre at the heart of the estate.",
       ],
       story: {
         heading: "Architecture that breathes with the landscape and the sea",
@@ -111,7 +111,7 @@ const data: Project[] = [
       location: {
         heading: "Above the reefs, two hours from Manila",
         body: [
-          "The site sits on a slope above Anilao's coast, about two hours (122 km) from NAIA via the South Luzon Expressway and STAR Tollway, and two minutes (637 m) from the Mabini Circumferential Road.",
+          "The site sits on a slope above Anilao’s coast, about two hours (122 km) from NAIA via the South Luzon Expressway and STAR Tollway, and two minutes (637 m) from the Mabini Circumferential Road.",
           "Surrounding islands shelter the coast during typhoons. From the upper slopes, the view runs west to Sombrero and Tingloy, where the sun sets over the water.",
         ],
       },
@@ -119,7 +119,7 @@ const data: Project[] = [
         heading: "Estate features",
         intro: "Planned shared services that make The Coral easy to live in and easy to leave in good hands.",
         items: [
-          { title: "Premium dive center", text: "A dive base within the estate for guided dives across Anilao's dive sites.", icon: "waves" },
+          { title: "Premium dive centre", text: "A dive base within the estate for guided dives across Anilao’s dive sites.", icon: "waves" },
           { title: "Full concierge", text: "Help with arrivals, housekeeping, dining and local trips.", icon: "concierge" },
           { title: "Walkable estate", text: "Parking is kept at the edge so the paths between homes stay quiet and pedestrian.", icon: "footprints" },
           { title: "Central waste management", text: "Responsible, centralised handling of solid waste for the whole estate.", icon: "recycle" },
@@ -142,12 +142,12 @@ const data: Project[] = [
           { title: "Flexible, open spaces", text: "Open layouts and modular furniture that adapt over time.", icon: "layout" },
         ],
       },
-      gallery: ["coralAerial", "coralVillaSunset", "coralInteriorLiving", "coralInteriorDining", "coralInteriorLounge", "coralInteriorBedroom"],
+      gallery: ["coralAerial", "coralVillaSunset", "coralInteriorLiving", "coralInteriorDining", "coralInteriorBedroom"],
       siteViews: ["siteSlope", "siteMeadow", "siteSunsetSombrero", "siteCoastView", "siteSunsetTingloy"],
       compare: {
         today: "siteSlope",
         planned: "coralVillaSunset",
-        caption: "Today: the actual hillside at The Coral. Planned: a coastal villa, artist's perspective. Placeholder pairing until matching-angle photos and renders are supplied.",
+        caption: "Today: the actual hillside at The Coral. Planned: a coastal villa, artist’s perspective. Placeholder pairing until matching-angle photos and renders are supplied.",
       },
       masterplan: {
         image: "coralMasterplan",
@@ -191,7 +191,7 @@ const data: Project[] = [
       audiences: [
         { title: "Families", text: "A weekend and holiday home two hours from the city." },
         { title: "Young professionals and investors", text: "An entry point to coastal ownership with managed rental options." },
-        { title: "Divers and foreign buyers", text: "A base on Anilao's coast, close to its dive sites." },
+        { title: "Divers and foreign buyers", text: "A base on Anilao’s coast, close to its dive sites." },
         { title: "Retirees", text: "Long-stay living with community and services nearby." },
       ],
       principles: [
@@ -220,7 +220,7 @@ const data: Project[] = [
       compare: {
         today: "ovSiteView2",
         planned: "ovResidences",
-        caption: "Today: the view from the Ocean View site. Planned: hillside residences, artist's perspective. Placeholder pairing until matching-angle photos and renders are supplied.",
+        caption: "Today: the view from the Ocean View site. Planned: hillside residences, artist’s perspective. Placeholder pairing until matching-angle photos and renders are supplied.",
       },
       availabilityNote: "Contact our team for current availability.",
     },
@@ -237,7 +237,7 @@ const data: Project[] = [
     salesStatus: "coming-soon",
     showPrices: false,
     accent: "mgcc",
-    heroImage: "mgccGolf",
+    heroImage: "mgccCover",
     cardImage: "mgccGolf",
     keyFacts: [],
     geo: null,
@@ -277,13 +277,13 @@ const data: Project[] = [
     page: {
       intro: [
         "The Urban Coral is envisioned as an urban escape for the people who shape the next generation of Makati: a place of exchange where work meets conversation and individuals become a community.",
-        "It is also a gateway. From the city, The Urban Coral connects residents and guests to Terra Concetti's coastal destinations two hours away.",
+        "It is also a gateway. From the city, The Urban Coral connects residents and guests to Terra Concetti’s coastal destinations two hours away.",
       ],
       location: {
         heading: "In the heart of Makati",
         body: ["Makati CBD is about 1 km away, MRT Buendia about 1.7 km, and NAIA about 26 minutes via the Skyway."],
       },
-      gallery: ["ucConcept"],
+      gallery: ["ucConcept", "ucEcosystem"],
       conceptLabel: "Proposed concept, subject to change",
     },
   },

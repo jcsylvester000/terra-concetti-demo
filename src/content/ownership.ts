@@ -21,7 +21,7 @@ export const buyerPaths = [
     title: "Foreign buyers",
     lead: "Clear, lawful structures for buyers from abroad.",
     points: [
-      "Condominium: foreigners can own condominium units, within the project's foreign-ownership limit.",
+      "Condominium: foreigners can own condominium units, within the project’s foreign-ownership limit.",
       "Houses: foreigners cannot own land in the Philippines. A house can be held through a long-term land lease, a usufruct or a similar structure.",
       "Our in-house legal team explains each structure; we also recommend independent legal advice before you commit.",
     ],
@@ -33,7 +33,7 @@ export const ownerBenefits = [
   { icon: "key", title: "Property management", text: "In-house management so your home is cared for while you are away." },
   { icon: "concierge", title: "Concierge", text: "Arrivals, housekeeping, dining and local trips arranged for you." },
   { icon: "layers", title: "Access to other managed projects", text: "Owner access to other Terra Concetti destinations as they open." },
-  { icon: "waves", title: "Dive-center discount", text: "Owner rates at the premium dive center." },
+  { icon: "waves", title: "Dive-centre discount", text: "Owner rates at the premium dive centre." },
   { icon: "compass", title: "Branded hotel operator (planned)", text: "A hotel operator is planned to run hospitality services." },
   { icon: "recycle", title: "Optional rental pool", text: "A 10-year rental agreement, renewable by the owner, if you choose to join." },
   { icon: "sun", title: "Owner nights and priority", text: "Free owner nights each year and priority booking." },
@@ -43,14 +43,14 @@ export const buyingSteps = [
   { title: "Inquire", text: "Contact our team by phone or email with the destination and type of home you are interested in." },
   { title: "Visit the site", text: "See the land, the views and the plans in person on an appointment-only site visit." },
   { title: "Choose your home", text: "Select a residence type and location with guidance on ownership structure and terms." },
-  { title: "Reserve and sign", text: "Reservations and contracts open once the project's DHSUD License to Sell is issued." },
+  { title: "Reserve and sign", text: "Reservations and contracts open once the project’s DHSUD License to Sell is issued." },
   { title: "Turnover and move in", text: "Receive your home, then let our team look after it whenever you are away." },
 ];
 
 export const faqs = [
   {
     q: "Can foreigners buy a home at The Coral or Ocean View?",
-    a: "Yes, through the right structure. Foreigners can own condominium units within the project's foreign-ownership limit. Land cannot be owned by foreigners, so houses are held through a long-term lease, a usufruct or a similar arrangement. Our legal team can walk you through each option.",
+    a: "Yes, through the right structure. Foreigners can own condominium units within the project’s foreign-ownership limit. Land cannot be owned by foreigners, so houses are held through a long-term lease, a usufruct or a similar arrangement. Our legal team can walk you through each option.",
   },
   {
     q: "Are prices published?",

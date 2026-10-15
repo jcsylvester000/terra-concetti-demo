@@ -81,7 +81,7 @@ export default async function ResidencesPage({ params }: { params: Promise<{ slu
               massing gives most homes a terrace and a view.
             </p>
           </div>
-          <Media image="coralMassing" sizes="(min-width: 1024px) 50vw, 100vw" className="rounded-[6px] bg-shell" caption="none" />
+          <Media image="coralMassing" sizes="(min-width: 1024px) 50vw, 100vw" className="rounded-[6px] bg-white p-4 ring-1 ring-line md:p-6" caption="none" />
         </Container>
       </Section>
 

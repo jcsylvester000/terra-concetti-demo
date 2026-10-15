@@ -3,7 +3,7 @@ import { articlePath, getArticles } from "@/lib/journal";
 
 /**
  * Every indexable static route with its last meaningful content change (sitemap lastmod, S-AC4).
- * Thank-you pages, /styleguide and 404 are excluded. Update the date when a page's content changes.
+ * Thank-you pages, /styleguide and 404 are excluded. Update the date when a page’s content changes.
  */
 export type RouteEntry = { path: string; lastModified: string; priority: number };
 

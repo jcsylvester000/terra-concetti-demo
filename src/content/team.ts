@@ -1,7 +1,7 @@
 import { z } from "zod";
 
 /**
- * Leadership and design partner (BRD P02, deck S. 8–12). Credentials use the deck's wording and
+ * Leadership and design partner (BRD P02, deck S. 8–12). Credentials use the deck’s wording and
  * must be approved by TCPC before launch (P02-AC2). No photos yet (asset A10): the UI shows a
  * neutral monogram placeholder, never a stock face (P02-AC1).
  */
@@ -86,7 +86,7 @@ export const editorialAuthor = {
   slug: "editorial",
   name: "Terra Concetti Journal",
   role: "Editorial team, Terra Concetti Properties Corp.",
-  short: "Guides and stories from the team building sustainable communities above Anilao's reefs.",
+  short: "Guides and stories from the team building sustainable communities above Anilao’s reefs.",
 };
 
 export function getAuthor(slug: string) {

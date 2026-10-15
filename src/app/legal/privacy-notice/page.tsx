@@ -21,7 +21,7 @@ export default function PrivacyNoticePage() {
       <h2>Who we are</h2>
       <p>
         {site.legalName}, {site.office.street}, {site.office.locality}, {site.office.region}, Philippines. For privacy questions or requests, email {site.email} with the
-        subject &ldquo;Data privacy&rdquo;. Our Data Protection Officer&apos;s details will be published here.
+        subject &ldquo;Data privacy&rdquo;. Our Data Protection Officer’s details will be published here.
       </p>
       <h2>What we collect</h2>
       <ul>

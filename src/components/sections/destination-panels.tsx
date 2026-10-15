@@ -27,7 +27,7 @@ export function DestinationPanels({ projects }: { projects: Project[] }) {
                 <span className="mt-1 block font-display text-[26px] leading-[30px] font-semibold lg:mt-2 lg:text-[30px] lg:leading-[34px]">{p.nameWithPlace}</span>
                 <span className="mt-1 block text-[14px] text-shell/85 lg:hidden">{p.tagline}</span>
                 <span className="tc-panel-more mt-3 hidden max-w-sm text-[15px] leading-6 text-shell/90 lg:block">
-                  {p.tagline}. {p.summary}
+                  {p.summary}
                 </span>
               </span>
               {note ? <span className="absolute right-3 bottom-2 hidden text-[11px] text-shell/70 lg:block">{note.replace(" Final design may change.", "").replace(".", "")}</span> : null}

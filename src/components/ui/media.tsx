@@ -2,17 +2,17 @@ import Image from "next/image";
 import { cn } from "@/lib/cn";
 import { images, type ImageKey, type SiteImage } from "@/content/images";
 
-const RENDER_NOTE = "Artist's perspective. Final design may change.";
+const RENDER_NOTE = "Artist’s perspective. Final design may change.";
 
 export function captionFor(image: SiteImage, notToScale = false) {
-  if (image.kind === "render") return notToScale ? "Artist's perspective, not to scale." : RENDER_NOTE;
+  if (image.kind === "render") return notToScale ? "Artist’s perspective, not to scale." : RENDER_NOTE;
   if (image.kind === "concept") return "Concept imagery.";
   if (image.credit) return `Photo: ${image.credit}`;
   return null;
 }
 
 /**
- * Every image goes through here so renders always carry "Artist's perspective" (BRD M-AC2),
+ * Every image goes through here so renders always carry "Artist’s perspective" (BRD M-AC2),
  * width/height are always known (M-AC1) and only the LCP image is eager (M-AC3).
  */
 export function Media({

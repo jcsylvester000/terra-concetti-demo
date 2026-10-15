@@ -44,7 +44,7 @@ export default function InvestPage() {
         eyebrow="Investor relations"
         title="Invest with Terra Concetti"
         lead="We are building a portfolio of sustainable coastal communities, beginning in Anilao, Batangas. We welcome conversations with investors and strategic partners who share the purpose."
-        aside={<Media image="coralAerial" sizes="(min-width: 1024px) 50vw, 100vw" priority className="rounded-[6px]" />}
+        aside={<Media image="ovResidences" sizes="(min-width: 1024px) 50vw, 100vw" priority className="rounded-[6px]" />}
       />
 
       <Section tone="shell">
