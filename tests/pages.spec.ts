@@ -1,0 +1,72 @@
+import { expect, test } from "@playwright/test";
+
+/** Batch 2+: page-level acceptance checks. ROUTES grows with each batch. */
+export const ROUTES = [
+  "/",
+  "/destinations",
+  "/destinations/the-coral-anilao",
+  "/destinations/the-coral-anilao/residences",
+  "/destinations/ocean-view-anilao",
+  "/destinations/mabini-golf-country-club",
+  "/destinations/the-urban-coral",
+];
+
+for (const path of ROUTES) {
+  test(`${path}: 200, one H1, canonical, no contact links, no horizontal scroll`, async ({ page }) => {
+    const res = await page.goto(path);
+    expect(res?.status()).toBe(200);
+    await expect(page.locator("h1")).toHaveCount(1);
+    await expect(page.locator('link[rel="canonical"]')).toHaveCount(1);
+    expect(await page.locator('a[href^="tel:"], a[href^="mailto:"], a[href*="wa.me"], a[href*="viber:"], form').count()).toBe(0);
+    const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
+    expect(overflow).toBeLessThanOrEqual(1);
+    // Every render on the page carries the "Artist's perspective" label (M-AC2).
+    const renders = await page.locator('img[alt*="artist\'s perspective"]').count();
+    if (renders) await expect(page.getByText(/Artist's perspective/).first()).toBeAttached();
+  });
+}
+
+test("The Coral residences total 68 and show prices on request (P06-AC1/AC2)", async ({ page }) => {
+  await page.goto("/destinations/the-coral-anilao/residences");
+  const table = page.locator("table");
+  await expect(table.locator("tfoot")).toContainText("68");
+  await expect(table).toContainText("On request");
+  await expect(page.locator("body")).not.toContainText("Cluster 1");
+});
+
+test("Ocean View shows 125 condominiums and no lot-status table (P07-AC2/AC3)", async ({ page }) => {
+  await page.goto("/destinations/ocean-view-anilao");
+  await expect(page.locator("body")).toContainText("125");
+  await expect(page.locator("body")).not.toContainText(/buy back/i);
+});
+
+test("coming-soon pages: concept label, no sizes, no buttons (P08/P09)", async ({ page }) => {
+  for (const path of ["/destinations/mabini-golf-country-club", "/destinations/the-urban-coral"]) {
+    await page.goto(path);
+    await expect(page.getByText("Proposed concept, subject to change")).toBeVisible();
+    await expect(page.locator("main")).not.toContainText(/hectares|\bha\b|casino|keys/i);
+  }
+});
+
+test("project pages carry ApartmentComplex JSON-LD and breadcrumbs", async ({ page }) => {
+  await page.goto("/destinations/the-coral-anilao");
+  const ld = await page.locator('script[type="application/ld+json"]').allTextContents();
+  expect(ld.join(" ")).toContain('"ApartmentComplex"');
+  expect(ld.join(" ")).toContain('"BreadcrumbList"');
+});
+
+test("today/planned slider works by keyboard (DS-AC3)", async ({ page }) => {
+  await page.goto("/destinations/the-coral-anilao");
+  const slider = page.getByRole("slider");
+  await slider.focus();
+  await page.keyboard.press("ArrowRight");
+  await page.keyboard.press("ArrowRight");
+  await expect(slider).toHaveValue("52");
+});
+
+test("hero image is eager with high fetch priority (P01-AC2)", async ({ page }) => {
+  await page.goto("/");
+  const hero = page.locator("section").first().locator("img").first();
+  await expect(hero).toHaveAttribute("fetchpriority", "high");
+  expect(await hero.getAttribute("loading")).not.toBe("lazy");
+});

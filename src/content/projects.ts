@@ -215,7 +215,7 @@ const data: Project[] = [
           { title: "Integrated waste management", text: "Segregation, recycling and proper disposal for the whole community.", icon: "recycle" },
         ],
       },
-      gallery: ["ovHero", "ovResidences", "ovPrinciples", "ovIdentity"],
+      gallery: ["ovResidences", "ovHero"],
       siteViews: ["ovSiteView2", "ovSiteView1", "ovSiteView3"],
       compare: {
         today: "ovSiteView2",
@@ -283,7 +283,7 @@ const data: Project[] = [
         heading: "In the heart of Makati",
         body: ["Makati CBD is about 1 km away, MRT Buendia about 1.7 km, and NAIA about 26 minutes via the Skyway."],
       },
-      gallery: ["ucConcept", "ucEcosystem"],
+      gallery: ["ucConcept"],
       conceptLabel: "Proposed concept, subject to change",
     },
   },

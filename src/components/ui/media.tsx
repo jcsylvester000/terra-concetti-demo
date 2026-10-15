@@ -38,8 +38,9 @@ export function Media({
 }) {
   const img = typeof image === "string" ? images[image] : image;
   const note = captionFor(img, notToScale);
+  const positioned = /(^|\s)(absolute|fixed|sticky)(\s|$)/.test(className ?? "");
   return (
-    <figure className={cn(fill ? "overflow-hidden" : "relative overflow-hidden", className)}>
+    <figure className={cn(positioned ? "overflow-hidden" : "relative overflow-hidden", className)}>
       <Image
         src={img.src}
         alt={img.alt}

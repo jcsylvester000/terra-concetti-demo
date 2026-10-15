@@ -57,6 +57,7 @@
     scroll-padding-top: 96px;
   }
   body {
+    overflow-x: clip;
     background: var(--color-linen);
     color: var(--color-forest);
     font-family: var(--font-sans);
@@ -74,6 +75,7 @@
     border-radius: 2px;
   }
   a { text-underline-offset: 0.2em; }
+  .font-display, .t-display, .t-display-xl { font-variant-numeric: lining-nums; }
   h1, h2, h3, h4 { text-wrap: balance; }
   p { text-wrap: pretty; }
 }
@@ -144,3 +146,56 @@
 }
 
 @keyframes tc-fade { from { opacity: 0; } to { opacity: 1; } }
+
+/* ---------------- Signature interactions (BRD §6.11) ---------------- */
+
+/* I1 Sea-view reveal: the hero image frame opens from a linen-margined window to full bleed.
+   The image is visible from first paint (never hidden), so it still counts as the LCP element. */
+@keyframes tc-hero-open {
+  from { clip-path: inset(7% 5% 7% 5% round 6px); }
+  to { clip-path: inset(0 0 0 0 round 0px); }
+}
+@keyframes tc-hero-copy {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: none; }
+}
+.tc-hero-reveal { animation: tc-hero-open 1.4s var(--ease-calm) 0.1s both; }
+.tc-hero-copy > * { animation: tc-hero-copy 0.9s var(--ease-calm) both; }
+.tc-hero-copy > *:nth-child(2) { animation-delay: 0.35s; }
+.tc-hero-copy > *:nth-child(3) { animation-delay: 0.5s; }
+.tc-hero-copy > *:nth-child(4) { animation-delay: 0.65s; }
+.tc-hero-copy > *:nth-child(1) { animation-delay: 0.25s; }
+
+/* Gentle parallax drift on scroll, where scroll-driven animations are supported. */
+@supports (animation-timeline: scroll()) {
+  @keyframes tc-drift { from { transform: translateY(0) scale(1.06); } to { transform: translateY(8%) scale(1.06); } }
+  .tc-parallax { animation: tc-drift linear both; animation-timeline: scroll(root); animation-range: 0 100vh; }
+}
+
+/* I7 Expanding destination panels (desktop): the hovered or focused panel widens. */
+@media (min-width: 1024px) {
+  .tc-panels { display: flex; gap: 12px; height: 560px; }
+  .tc-panel { flex: 1 1 0; min-width: 0; transition: flex-grow 700ms var(--ease-calm); }
+  .tc-panels:not(:hover):not(:focus-within) .tc-panel:first-child,
+  .tc-panel:hover,
+  .tc-panel:focus-within { flex-grow: 2.6; }
+  .tc-panel .tc-panel-more { opacity: 0; transform: translateY(8px); transition: opacity 500ms var(--ease-calm), transform 500ms var(--ease-calm); }
+  .tc-panels:not(:hover):not(:focus-within) .tc-panel:first-child .tc-panel-more,
+  .tc-panel:hover .tc-panel-more,
+  .tc-panel:focus-within .tc-panel-more { opacity: 1; transform: none; transition-delay: 200ms; }
+}
+
+/* I9 Contour lines that draw in once (used behind maps and the masterplan). */
+@keyframes tc-draw { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+.tc-contours path { stroke-dasharray: 1; stroke-dashoffset: 0; }
+.tc-contours.is-drawing path { animation: tc-draw 2.4s var(--ease-calm) both; }
+
+@media (prefers-reduced-motion: reduce) {
+  .tc-hero-reveal, .tc-hero-copy > *, .tc-parallax { animation: none !important; clip-path: none !important; opacity: 1 !important; transform: none !important; }
+}
+
+/* I2 Bento settle: offsets apply only while JS marks an offscreen grid as pending (no-JS = static). */
+[data-settle="pending"] > .bento-cell { transform: translate(var(--sx, 0), var(--sy, 0)) scale(0.97); }
+[data-settle] { overflow-x: clip; }
+[data-settle] > .bento-cell { transition: transform 1.1s var(--ease-calm); transition-delay: var(--sd, 0s); }
+@media (prefers-reduced-motion: reduce) { [data-settle] > .bento-cell { transform: none !important; transition: none !important; } }

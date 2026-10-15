@@ -8,9 +8,13 @@ export type RouteEntry = { path: string; lastModified: string; priority: number 
 
 export const staticRoutes: RouteEntry[] = [
   { path: "/", lastModified: "2026-10-15", priority: 1 },
+  { path: "/destinations", lastModified: "2026-10-15", priority: 0.9 },
 ];
 
-export const projectRoutes: RouteEntry[] = [];
+export const projectRoutes: RouteEntry[] = [
+  ...projects.map((p) => ({ path: projectPath(p), lastModified: "2026-10-15", priority: p.template === "project" ? 0.9 : 0.6 })),
+  { path: "/destinations/the-coral-anilao/residences", lastModified: "2026-10-15", priority: 0.8 },
+];
 
 export function allRoutes(): RouteEntry[] {
   return [...staticRoutes, ...projectRoutes];
