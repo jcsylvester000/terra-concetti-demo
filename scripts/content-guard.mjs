@@ -12,9 +12,11 @@
  * REQUIRE_FINAL_ASSETS=true, in which case any placeholder fails the build (production launch gate).
  */
 import { readFileSync, readdirSync, statSync } from "node:fs";
-import { join, relative } from "node:path";
+import { join, relative, sep } from "node:path";
+import { fileURLToPath } from "node:url";
 
-const root = new URL("..", import.meta.url).pathname;
+// fileURLToPath decodes %20 and gives a real Windows path (C:\...); .pathname did neither (TC-15).
+const root = fileURLToPath(new URL("..", import.meta.url));
 const SRC = join(root, "src");
 
 function walk(dir, out = []) {
@@ -31,7 +33,7 @@ const errors = [];
 
 /* ---------- 1. Blocked terms in published content ---------- */
 // Content = src/content/** (data + journal) and src/app/** (page copy). Components are UI only.
-const contentFiles = files.filter((f) => /\/src\/(content|app)\//.test(f));
+const contentFiles = files.filter((f) => /\/src\/(content|app)\//.test(f.split(sep).join("/")));
 const blocked = [
   [/\bIRR\b/, "IRR (investor return)"],
   [/\bGDV\b/, "GDV (gross development value)"],
